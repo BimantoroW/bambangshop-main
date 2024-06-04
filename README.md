@@ -87,3 +87,5 @@ This is the place for you to write reflections:
 3. Postman dapat membantu kita mengetes endpoint-endpoint dari aplikasi kita dengan mudah. Postman memudahkan kita untuk mengirim request HTTP ke endpoint-endpoint tersebut, seperti dengan menambahkan body dan header pada request. Fitur yang menurut saya sangat membantu adalah fitur mengirim HTTP request yang baru dijelaskan.
 
 #### Reflection Publisher-3
+1. Yang dipake di BambangShop adalah push model karena aplikasi utama BambangShop akan mengirim notifikasi pada semua subscriber tiap kali ada produk yang dibuat, dihapus, atau dipublish.
+2. Jika kita menggunakan variasi pull, maka subscriber dapat memilih untuk mengambil data yang relevan saja untuk mereka, dibanding dengan push model yang selalu mengirim data ke subscriber regardless data tersebut relevan atau tidak. Kelemahannya adalah subscriber sekarang harus memperhatikan kapan ia memerlukan data tersebut, dibanding dengan push model di mana subscriber selalu memiliki data terbaru dan tinggal memakainya saja dalak aplikasinya.
