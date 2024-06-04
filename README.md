@@ -77,10 +77,13 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
-Menurut saya, dalam kasus BambangShop, satu struct sudah cukup karena skala BambangShop cukup kecil dan logikanya sederhana. Namun, jika BambangShop nantinya akan diperbesar lagi sehingga akan ada observer lain selain subscriber, sebaiknya dibuat interface observer agar nanti interface tersebut dapat diimplement oleh banyak kelas dengan caranya masing-masing.
+1. Menurut saya, dalam kasus BambangShop, satu struct sudah cukup karena skala BambangShop cukup kecil dan logikanya sederhana. Namun, jika BambangShop nantinya akan diperbesar lagi sehingga akan ada observer lain selain subscriber, sebaiknya dibuat interface observer agar nanti interface tersebut dapat diimplement oleh banyak kelas dengan caranya masing-masing.
+2. Menggunakan list bisa-bisa saja, tetapi pengolahan data seperti me-retrieve data nantinya akan lebih rumit karena list tidak dapat meynimpan key-value pair. Dengan DashMap dan karena atribut id dan url unik, kita dapat mengakses objek Product dan Subsriber yang kita inginkan hanya dengan id dan url tersebut sehingga akan mempermudah pengolahan data.
+3. Menurut saya, kita tetap memerlukan DashMap karena DashMap adalah HashMap yang dapat dikatakan dibuat untuk multi-threading. Kemudian, BambangShop merupakan aplikasi multi-threaded sehingga map subscriber akan diakses oleh banyak thread sekaligus. Karena itu, kita memerlukan DashMap dibanding HashMap.
 
 #### Reflection Publisher-2
-Menggunakan list bisa-bisa saja, tetapi pengolahan data seperti me-retrieve data nantinya akan lebih rumit karena list tidak dapat meynimpan key-value pair. Dengan DashMap dan karena atribut id dan url unik, kita dapat mengakses objek Product dan Subsriber yang kita inginkan hanya dengan id dan url tersebut sehingga akan mempermudah pengolahan data.
+1. Menurut saya, repository dan service perlu dipisah karena mereka memiliki dua tugas yang berbeda. Tugas utama dari repository adalah untuk berkomunikasi dengan database, seperti mengambil dan menyimpan data. Sedangkan service adalah tempat logika utama dari program. Karena itu, repository dan service perlu dipisah agar kode lebih mudah dimaintain.
+2. Jika kita hanya satu layer saja untuk tiap kelas, maka secara teori program dapat tetap berjalan dengan lancar. Namun, kode akan jauh lebih susah untuk dimaintain karena tidak ada struktur yang jelas dan kelas-kelas terikat dengan kuat.
+3. Postman dapat membantu kita mengetes endpoint-endpoint dari aplikasi kita dengan mudah. Postman memudahkan kita untuk mengirim request HTTP ke endpoint-endpoint tersebut, seperti dengan menambahkan body dan header pada request. Fitur yang menurut saya sangat membantu adalah fitur mengirim HTTP request yang baru dijelaskan.
 
 #### Reflection Publisher-3
-Menurut saya, kita tetap memerlukan DashMap karena DashMap adalah HashMap yang dapat dikatakan dibuat untuk multi-threading. Kemudian, BambangShop merupakan aplikasi multi-threaded sehingga map subscriber akan diakses oleh banyak thread sekaligus. Karena itu, kita memerlukan DashMap dibanding HashMap.
